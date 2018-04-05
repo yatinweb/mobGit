@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { OAuthModule } from 'angular-oauth2-oidc';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -23,7 +22,6 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     TranslateModule.forRoot(),
     IonicModule.forRoot(AppComponent, { locationStrategy: 'path' }),
-    OAuthModule.forRoot(),
     CoreModule,
     SharedModule,
     HomeModule,
