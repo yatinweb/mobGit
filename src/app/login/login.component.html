@@ -1,0 +1,35 @@
+<ion-content no-bounce>
+  <div class="login-background"></div>
+  <ion-grid no-padding>
+    <ion-row justify-content-center no-padding>
+      <ion-col col-sm-8 col-lg-6 col-xl-4 align-self-center no-padding>
+        <div class="login-header" text-center>
+          <h1 translate>APP_NAME</h1>
+          <h6>v{{version}}</h6>
+          <ion-list *ngIf="isWeb" color="primary" no-lines no-margin>
+            <ion-item color="primary">
+              <ion-label><span translate>Language</span></ion-label>
+              <ion-select [ngModel]="currentLanguage" (ngModelChange)="setLanguage($event)" interface="popover">
+                <ion-option *ngFor="let language of languages" [value]="language">{{language}}</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div class="login-container">
+            <div padding ion-text color="danger" [hidden]="!error" translate>
+              Auth fail !
+            </div>
+            <ion-card text-center>
+              <ion-card-header>
+                Login With
+              </ion-card-header>
+              <button color="dark" (click)="login()" ion-button icon-only>
+                <ion-icon name="logo-github"></ion-icon>
+              </button>
+            </ion-card>
+            
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

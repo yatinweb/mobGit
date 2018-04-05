@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{login}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-item>
+        <h2>{{userProfile?.name}}</h2>
+        <p>{{userProfile?.email}}</p>
+    </ion-item>
+  
+    <img src="{{userProfile?.avatar_url}}" />
+  
+    <ion-card-content>
+      <p>{{userProfile?.bio}} {{userProfile?.company}}</p>
+    </ion-card-content>
+  
+
+    <ion-item>
+        <ion-icon name="heart" item-start></ion-icon>
+        <ion-label>Mark as favorite</ion-label>
+        <ion-toggle (ionChange)="updateFavoriteDetail()" [(ngModel)]="isFavorite"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+        <ion-icon name="person" item-start></ion-icon>
+        <ion-label>Followers</ion-label>
+        <ion-badge item-end>{{userProfile?.followers}}</ion-badge>
+    </ion-item>
+
+    <ion-item>
+        <ion-icon name="people" item-start></ion-icon>
+        <ion-label>Following</ion-label>
+        <ion-badge item-end>{{userProfile?.following}}</ion-badge>
+    </ion-item>
+  
+  </ion-card>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><span translate>Search</span></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-searchbar debounce="500" [showCancelButton]="true" (ionCancel)="onCancel($event)" (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail item-start>
+        <img src="{{item.avatar_url}}" />
+      </ion-thumbnail>
+      <h2>{{item.login}}</h2>
+      <p><span translate>Score</span> • {{item.score}}</p>
+      <button ion-button clear item-end [navPush]="pushPage" [navParams]="{'login': item.login}">View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

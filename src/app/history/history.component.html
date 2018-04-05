@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title><span translate>History</span></ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+    
+      <ion-list>
+          <ion-item>
+              <ion-label>Sort By</ion-label>
+              <ion-select (ionChange)="changeSort($event)" [(ngModel)]="resultSort">
+                <ion-option value="name">Name</ion-option>
+                <ion-option value="favorite">Favorite</ion-option>
+              </ion-select>
+              <button (click)="removeHistory()" ion-button color="danger" item-end>Clear</button>
+            </ion-item>
+          <ion-item *ngFor="let item of _isHisrotyList">
+            <ion-thumbnail item-start>
+              <img src="{{item.avatar_url}}" />
+            </ion-thumbnail>
+            <h2>{{item.login}}</h2>
+            <p><ion-icon color="danger" *ngIf="checkForfavorite(item.login)" name="heart" item-start></ion-icon> {{item.timestamp | date:'short'}}</p>
+            <button ion-button clear item-end [navPush]="pushPage" [navParams]="{'login': item.login}">View</button>
+          </ion-item>
+        </ion-list>
+  </ion-content>
+  

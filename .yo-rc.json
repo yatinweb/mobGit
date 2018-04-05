@@ -1,0 +1,19 @@
+{
+  "generator-ngx-rocket": {
+    "version": "4.2.0",
+    "props": {
+      "location": "path",
+      "appName": "MobGit",
+      "target": [
+        "web"
+      ],
+      "pwa": false,
+      "ui": "ionic",
+      "auth": true,
+      "angulartics": false,
+      "projectName": "mob-git",
+      "packageManager": "npm",
+      "mobile": []
+    }
+  }
+}
