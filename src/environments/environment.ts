@@ -11,6 +11,9 @@ export const environment = {
   version: env.npm_package_version + '-dev',
   oauthUrl: '',
   serverUrl: '',
+  clientId: '133550a95c67187082d8',
+  scope: 'user,public_repo',
+  clientSecret: '5d246c1ec96d1be194e536f31448501c39391c7c',
   defaultLanguage: 'en-US',
   supportedLanguages: [
     'en-US',

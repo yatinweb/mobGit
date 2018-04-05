@@ -6,6 +6,9 @@ export const environment = {
   version: env.npm_package_version,
   oauthUrl: 'https://github.com',
   serverUrl: 'https://api.github.com',
+  clientId: '92bded2cfd66ea416d18',
+  scope: 'user,public_repo',
+  clientSecret: 'bed77c79516309110e5c03ccf757f385530e5940',
   defaultLanguage: 'en-US',
   supportedLanguages: [
     'en-US',

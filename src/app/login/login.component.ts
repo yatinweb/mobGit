@@ -16,11 +16,11 @@ const log = new Logger('Login');
 export class LoginComponent implements OnInit {
 
   error: string;
-  private client_id = '133550a95c67187082d8';
-  private scope = 'user,public_repo';
+  private client_id = environment.clientId;
+  private scope = environment.scope;
   private auth_url = 'https://github.com/login/oauth/authorize';
   private state = 'yatin';
-  private client_secret = '5d246c1ec96d1be194e536f31448501c39391c7c';
+  private client_secret = environment.clientSecret;
   version: string = environment.version;
 
   constructor(private router: Router,
