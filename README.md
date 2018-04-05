@@ -120,4 +120,4 @@ Development, build and quality processes are based on [angular-cli](https://gith
 - [Browser routing](docs/routing.md)
 
 #### Made With Love
-- Yatin Patel
+[Yatin Patel](mailto:yatinweb@gmail.com)
