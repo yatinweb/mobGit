@@ -35,7 +35,7 @@ FROM alpine:3.4 as deploy
 RUN apk --update add nginx php5-fpm && \
     mkdir -p /run/nginx
 
-COPY --from=build /mobGit/dist/ /dist/
+COPY --from=build /mobGit/dist/ /www/
 ADD nginx.conf /etc/nginx/
 ADD php-fpm.conf /etc/php5/php-fpm.conf
 ADD run.sh /run.sh
