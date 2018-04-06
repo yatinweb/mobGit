@@ -49,6 +49,8 @@ module.exports = function(config) {
                 ]
             }
         },
-        singleRun: true
+        singleRun: true,
+        browserDisconnectTolerance: 2,
+        browserNoActivityTimeout: 50000
     });
 };

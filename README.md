@@ -2,6 +2,8 @@
 
 This project is GitHub User Search App!
 
+<img src="/demo.gif" alt="MobGit" width="800px">
+
 # Getting started
 
 1. Go to project folder and install dependencies:

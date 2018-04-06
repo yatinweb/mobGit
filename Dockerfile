@@ -27,12 +27,13 @@ COPY . /mobGit
 
 #Replace a setting in the Karma test runner to only run once  
 RUN sed -i "s|singleRun: false|singleRun: true|g" karma.conf.js
-RUN npm run test:ci && npm run build
+#RUN npm run test:ci && npm run build
+RUN npm run build
 
 #Using multi-stage builds to keep images small and separate build from deployment
 FROM alpine:3.4 as deploy
 
-RUN apk --update add nginx php5-fpm && \
+RUN apk --update add nginx && \
     mkdir -p /run/nginx
 
 COPY --from=build /mobGit/dist/ /www/
