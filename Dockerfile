@@ -37,7 +37,6 @@ RUN apk --update add nginx php5-fpm && \
 
 COPY --from=build /mobGit/dist/ /www/
 ADD nginx.conf /etc/nginx/
-ADD php-fpm.conf /etc/php5/php-fpm.conf
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
 
