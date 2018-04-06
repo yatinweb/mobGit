@@ -1,6 +1,6 @@
 # MobGit
 
-This project is GitHub User Search App.
+This project is GitHub User Search App!
 
 # Getting started
 
