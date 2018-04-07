@@ -27,22 +27,16 @@ COPY . /mobGit
 
 #Replace a setting in the Karma test runner to only run once  
 RUN sed -i "s|singleRun: false|singleRun: true|g" karma.conf.js
-#RUN npm run test:ci && npm run build
-RUN npm run build
+RUN npm run test:ci && npm run build
 
 #Using multi-stage builds to keep images small and separate build from deployment
-FROM alpine:3.4 as deploy
+FROM nginx:1.13.3-alpine as deploy
 
-RUN apk --update add nginx && \
-    mkdir -p /run/nginx
+ADD default.conf /etc/nginx/conf.d/
+## Remove default nginx website
+RUN rm -rf /usr/share/nginx/html/*
 
-COPY --from=build /mobGit/dist/ /www/
-ADD nginx.conf /etc/nginx/
-ADD run.sh /run.sh
-RUN chmod +x /run.sh
+## From 'builder' stage copy over the artifacts in dist folder to default nginx public folder
+COPY --from=build /mobGit/dist /usr/share/nginx/html
 
-
-ENV LISTEN_PORT=80
-
-EXPOSE 80
-CMD /run.sh
+CMD ["nginx", "-g", "daemon off;"]

@@ -4,7 +4,7 @@ import env from './.env';
 export const environment = {
   production: true,
   version: env.npm_package_version,
-  oauthUrl: 'https://github.com',
+  oauthUrl: '', // Added proxy in nginx
   serverUrl: 'https://api.github.com',
   clientId: '92bded2cfd66ea416d18',
   scope: 'user,public_repo',
