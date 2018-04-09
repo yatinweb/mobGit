@@ -13,7 +13,7 @@
               <ion-label>Sort By</ion-label>
               <ion-select (ionChange)="changeSort($event)" [(ngModel)]="resultSort">
                 <ion-option value="name">Name</ion-option>
-                <ion-option value="favorite">Favorite</ion-option>
+                <ion-option value="time">Time</ion-option>
               </ion-select>
               <button (click)="removeHistory()" ion-button color="danger" item-end>Clear</button>
             </ion-item>
